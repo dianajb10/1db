@@ -58,3 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+$(".card").hover(function(){
+    $(".card").removeClass("active");
+    $(this).addClass("active");
+    
+});

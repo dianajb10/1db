@@ -87,7 +87,7 @@ header {
 
 /* Style sections */
 section {
-    padding: 60px 20px; /* Adjust padding as needed */
+    padding: 100px 20px; /* Adjust padding as needed */
     margin-top: 80px; /* Ensure content is not hidden behind fixed navbar */
 }
 
@@ -147,6 +147,101 @@ section {
     margin: 5px 0; 
     padding: 10px;
     border-radius: 5px;
+}
+
+:root {
+    --cb: cubic-bezier(.05, .61, .41, .95);
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100hv;
+    font-family: "Lexend", sans-serif;
+    transition: 0.25s;
+    background: #e1e1e1;
+}
+
+.cards {
+    display: flex;
+    max-width: 800px;
+    width: calc(100% 100px);
+    height: 400px;
+}
+
+.cards .card .info .title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.cards .card .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card .label .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    white-space: pre;
+    transition: 1s var(--cb);
+}
+
+.cards .card {
+    position: relative;
+    min-width: 100px;
+    background: var(--bg);
+    overflow: hidden;
+    margin: 5px;
+    background-size: auto 150%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s var(--cb);
+    border-radius: 30px;
+}
+
+.cards .card .label {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    transition: 0.5 var(--cb);
+}
+
+.cards .card.active .label {
+    bottom: 20px;
+    left: 20px;
+}
+
+.cards .card.active {
+    flex-grow: 10000;
+    background-size: auto 100%;
+}
+
+.cards .card:not(.active) .label {
+    bottom: 10px;
+    left: 10px;
+}
+
+.cards .card .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(0, #0004, transparent);
+}
+
+.cards .card.active .info {
+    opacity: 1;
+}
+  
+.cards .card:not(.active) .info {
+    opacity: 0;
 }
 
 .project {
